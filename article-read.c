@@ -32,10 +32,10 @@ size_t     ArticleLength = (size_t)0;
 boolean_t  GoArticleHeader = FALSE;
 boolean_t  GotArticle = FALSE;
 
-pthread_cond_t AH_c;
-pthread_cond_t AR_c;
-pthread_cond_t GAH_c;
-pthread_cond_t GHF_c;
+pthread_cond_t AH_c;  # Article Headers
+pthread_cond_t AR_c;  # Article Read
+pthread_cond_t GAH_c; # Got Article Header
+pthread_cond_t GHF_c; # Got Header Fields
 pthread_cond_t nR_c;
 pthread_cond_t FO_c;
 
