@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# multifilter-statsnow script - v1.1 - 30 September 1998
+#
+cd `/usr/bin/dirname $0`
+
+PIDFILE="../../log/multifilter.pid"
+
+########## Check if multifilter is running
+if [ -f $PIDFILE ]
+then
+        PID=`cat $PIDFILE`
+        PS=`ps -fp $PID | tail -1 | grep $PID | grep multifilter`
+        [ `echo $PS | wc -w` -ne 0 ] || {
+                echo "multifilter PID $PID? not running"
+                exit 1
+        }
+else
+        echo  "multifilter PID file [$PIDFILE] not found"
+        exit 1
+fi
+
+if [ "$PID" -gt 0 ]; then
+   echo "Reload: Sending Signal..."
+   kill -USR2 $PID 2>&1 | /usr/bin/grep -v "no such process"
+fi

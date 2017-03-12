@@ -1,0 +1,60 @@
+Subject: Re: Working Only TCP/IP with W95 clients
+Message-ID: <6tr6j3$km$1@news-2.csn.net>
+Newsgroups: microsoft.public.windowsnt.protocol.tcpip
+joshua{belanger}-test% telnet carnaval 119
+Trying 192.26.210.18...
+Connected to carnaval.risq.qc.ca.
+Escape character is '^]'.
+200 RISQ - Privilege [Z] (Typhoon v1.1.7)
+article <6tr6j3$km$1@news-2.csn.net>
+220 0 <6tr6j3$km$1@news-2.csn.net>
+Path: carnaval.risq.qc.ca!sunqbc.risq.qc.ca!newsfeed.berkeley.edu!su-news-hub1.bbnplanet.com!denver-news-feed1.bbnplanet.com!news.bbnplanet.com!csn!nntp-xfer-1.csn.net!news-2.csn.net!not-for-mail
+From: "Michael D. Ober" <mdo@wakeassoc.com.nospam>
+Date: Thu, 17 Sep 1998 08:33:06 -0600
+Organization: Qwest Communications +1.303.285.0194 Denver Colorado
+Lines: 37
+References: <6te8g6$mk$1@news2.xs4all.nl> <OM2jEvb49GA.246@uppssnewspub05.moswest.msn.net>
+NNTP-Posting-Host: 199.117.201.254
+X-Newsreader: Microsoft Outlook Express 4.72.3155.0
+X-MimeOLE: Produced By Microsoft MimeOLE V4.72.3155.0
+ref: news-2.csn.net microsoft.public.windowsnt.protocol.tcpip:27640
+Xref: carnaval.risq.qc.ca microsoft.public.windowsnt.protocol.tcpip:25246
+
+You also need to ensure the DNS Host name and the Machine's Identification
+Tab name are the same.  Both should be less than 15 characters (NetBIOS
+limit).  MS has stated that matching the Workgroup and Domain names as well
+as the Host and NetBIOS names will be critical for smooth transition away
+from NetBIOS.  It also makes troubleshooting a whole lot easier.
+
+Mike Ober.
+
+
+Tom Nielsen wrote in message ...
+>Try to set the workgroup name equal to the domain name.
+>
+>If your machine is connected correcly to the network (access) -
+>then you can forget about DHCP, DNS, WINS etc.
+>
+>(If you still have problems - try to use run - \\servername)
+>
+>Tom Nielsen
+>
+>Dick Meijaard skrev i meddelelsen <6te8g6$mk$1@news2.xs4all.nl>...
+>>Hi,
+>>
+>>I've installed TCP/IP and Netbeui on the NT server and W95 clients,
+>>
+>>What to do: I remove Netbeui (clients and server) and i will see all the
+>>server in the network neighbourhood?
+>>
+>>(When i remove Netbeui then the networkneighbourhood is empty!)
+>>
+>>
+>>Dick Meijaard
+>>
+>>
+>
+>
+
+
+.

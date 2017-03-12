@@ -1,0 +1,21 @@
+Version 1.1.pre-2 (30/09/1998):
+
+	- FIX: "Overlength" value for statistics is not resetted to
+	  zero at every updates.
+
+Version 1.1.pre-1 (29/09/1998):
+
+	- NEW: MaxLength Directive per filter object
+	- OPTIMIZE: GetHeaderLength is called only and only if needed.
+	- FIX: argv -l was not accepted
+
+  * To upgrade from previous versions, you must addin the
+    new MaxLength directives.
+
+Version 1.0.1 (29/09/1998):
+
+	- Fixes a few minor bugs
+
+Version 1.0.0 (29/09/1998):
+
+	- First public release.

@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# multifilter-validate script - v1.1 - 30 September 1998
+#
+cd `/usr/bin/dirname $0`
+
+CONFIGFILE="-c ./multifilter.conf"
+
+########## Validate Configuration before Reloading
+./multifilter -V $CONFIGFILE > /dev/null # 2>&1
+
+if [ $? -ne 0 ]
+then 
+	echo "multifilter Invalid Configuration on "`uname -n`""
+	echo "Check syslog files or run [multifilter -V]"
+	exit 1
+fi

@@ -1,0 +1,42 @@
+Here's a little bit of informations on how to use multifilter.
+You should first read the INSTALL file and check the
+"multifilter.conf-EXAMPLE" file in the "spam-filtering" directory.
+
+On start up ("./spam-filtering/multifilter-start"), multifilter validates
+the configuration file and starts every external programs configured
+in the configuration file.
+
+When an article is read in multifilter from the server, multifilter
+writes the article to every program(s) declared in the configuration
+file.  It does this starting with the first program declared in the
+configuration file until a program refused the article or until it
+reaches the end of the list of programs.
+
+
+There are 4 utilities in the "spam-filtering" directory which
+are easy to understand:
+
+    multifilter-start
+    multifilter-validate
+    multifilter-statsnow
+    multifilter-reload
+
+
+multifilter-start:
+
+  -  validates your configuration and starts multifilter
+
+multifilter-validate aka "./spam-filtering/multifilter -V":
+
+  -  validates your configuration file.  If there are any
+     errors, they will be printed on the stderr output.
+
+multifilter-reload:
+
+  -  validates the configuration file and if the file is good, a signal
+     is sent to multifilter so it can re-read the configuration files
+     and restart the programs according to the new configuration file!
+
+multifilter-statsnow:
+
+  -  tells multifilter to write the latest stats.

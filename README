@@ -1,0 +1,27 @@
+Welcome to multifilter!
+
+multifilter allows you to run multiple spam-filtering programs
+on your servers (Typhoon, Breeze, Cyclone from Highwind's Software).
+It also allows you to start/stop/add/remove spam-filtering
+programs on-the-fly without the need to restart your server.
+
+You might want to consult http://www.highwind.com/antispam.html for
+a list of spam-filtering programs available for Highwind Software's
+products.  For more documentations on how multifilter interacts
+with the server, please check the documentation on Highwind
+Software's Web server (http://www.highwind.com/doc).
+
+If you want to report a bug, a patch or a suggestion, please send your
+mail to "belanger@pobox.com".
+
+Distribution sites are:
+
+    1- Official releases, pre-releases, current-work, etc
+
+		http://www.zephyrus.org/multifilter/
+
+
+    2- Official releases
+
+		http://contrib.highwind.com/
+

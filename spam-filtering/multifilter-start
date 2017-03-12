@@ -1,0 +1,40 @@
+#!/bin/sh
+#
+# multifilter-start script - v1.1 - 30 September 1998
+#
+cd `/usr/bin/dirname $0`
+
+PIDFILE="../../log/multifilter.pid"
+#CONFIGFILE="-c ./multifilter.conf"
+#LOGFILE="-l ../../log/multifilter.log"
+#UPDATETIME="-u 3600"
+
+########## Validate multifilter Configuration before Starting
+./multifilter-validate > /dev/null 2>&1
+if [ $? -ne 0 ]
+then 
+        echo "multifilter Invalid Configuration on "`uname -n`". Reload Aborted"
+        echo "Check syslog files or run [multifilter-validate]"
+	exit 1
+fi
+
+########## Check if multifilter is running
+if [ -f $PIDFILE ]
+then
+        PID=`cat $PIDFILE`
+        PS=`ps -fp $PID | tail -1 | grep $PID | grep multifilter`
+        [ `echo $PS | wc -w` -ne 0 ] || {
+                rm -f $PIDFILE
+        }
+fi
+
+if [ -f $PIDFILE ]
+then
+        echo "multifilter PID $PID already running"
+        exit 1
+fi
+
+#
+# Run "./multifilter -h" for available options
+#
+exec ./multifilter -p $PIDFILE $CONFIGFILE $LOGFILE

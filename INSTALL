@@ -1,0 +1,50 @@
+Installation of multifilter is quite simple.  Here is a good
+way to do it:
+
+1- Compile the program using "make".  You might want/have to edit
+   the Makefile.  The binary is created in the "spam-filtering"
+   directory.
+
+
+2- Move the directory "spam-filtering" in your $NEWS/bin
+
+
+3- Move/Install your filtering programs in the "$NEWS/bin/spam-filtering"
+   directory.
+
+   I suggest the following hierarchie within your "$NEWS/bin"
+   directory:
+
+   spam-filtering/:
+   cleanfeed/            multifilter-start     multifilter.conf
+   multifilter           multifilter-statsnow  spamhippo/
+   multifilter-reload    multifilter-validate
+
+   spam-filtering/cleanfeed:
+   CHANGES             cleanfeed.8         cleanfeed.local.ex  README
+   cleanfeed           cleanfeed.conf      cleanfeed.man
+
+   spam-filtering/spamhippo:
+   artcnt.db    article.ldb  spamhippo    starthippo   README
+
+
+4- Edit the start up scripts and configuration files from your
+   filtering program to reflect the new location.
+
+
+5- Create a "multifilter.conf" file in the "spam-filtering" directory.
+   Check the multifilter.conf-EXAMPLE for for instructions from the
+   same directory.
+
+
+6- Run "./spam-filtering/multifilter-validate".  Correct any errors.
+   You might want to check the default values and options of multifilter
+   by running "./multifilter -h".
+
+
+7- Edit the start up script of your server to run the following spam-filtering
+   program:
+
+         "./spam-filtering/multifilter-start"
+
+
